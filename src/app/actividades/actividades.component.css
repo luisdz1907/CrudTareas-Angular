@@ -1,0 +1,22 @@
+.btn-actividad{
+  font-weight: bold;
+  font-size: 17px;
+}
+.btn{
+  font-size: 17px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+h1{
+  font-weight: bold;
+}
+.table{
+  width: 100%;
+}
+span i{
+  font-size: 18px;
+  margin-right: 5px;
+}
+tr td{
+  text-align: center;
+}

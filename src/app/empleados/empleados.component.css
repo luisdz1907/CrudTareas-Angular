@@ -1,0 +1,23 @@
+.btn-empleado{
+  font-weight: bold;
+  font-size: 17px;
+}
+.btn{
+  font-size: 17px;
+  margin-left: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+h1{
+  font-weight: bold;
+}
+span i{
+  font-size: 18px;
+  margin-right: 5px;
+}
+tr td{
+  text-align: center;
+}
+tr th{
+  text-align: center;
+}

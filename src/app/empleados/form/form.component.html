@@ -1,0 +1,42 @@
+<div class="contenedor mt-1">
+  <!-- <form (ngSubmit) = "create()"> -->
+    <h1 class="text-center">Formulario para registrar un empleado.</h1>
+  <form>
+    <div class="mb-2">
+      <label class="form-label">Nombre</label>
+      <input type="text" class="form-control" [(ngModel)]="empleado.nombre" name="nombre">
+    </div>
+
+    <div class="mb-2">
+      <label class="form-label">Apellidos</label>
+      <input type="text" class="form-control"  [(ngModel)]="empleado.apellidos" name="apellidos">
+    </div>
+
+    <div class="mb-2">
+      <label class="form-label">Cedula</label>
+      <input type="text" class="form-control" [(ngModel)]="empleado.cedula" name="cedula">
+    </div>
+
+    <div class="mb-2">
+      <label class="form-label">Fecha Nacimiento</label>
+      <input type="date" class="form-control" [(ngModel)]="empleado.fechaNaciemiento" name="fechaNacimiento">
+    </div>
+
+    <div class="mb-2">
+      <label class="form-label">Direccion</label>
+      <input type="text" class="form-control" [(ngModel)]="empleado.direccion" name="direccion">
+    </div>
+
+    <div class="mb-2">
+      <label class="form-label">Telefono</label>
+      <input type="text" class="form-control" [(ngModel)]="empleado.telefono" name="telefono">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" (click)="create()" *ngIf="!empleado.id else elseBlock">Crear</button>
+
+    <ng-template #elseBlock>
+      <button type="submit" class="btn btn-primary" (click)="update()">Editar</button>
+    </ng-template>
+  </form>
+</div>

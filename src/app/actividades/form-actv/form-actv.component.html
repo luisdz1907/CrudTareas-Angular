@@ -1,0 +1,44 @@
+<div class="contenedor mt-3">
+  <!-- <form (ngSubmit) = "create()"> -->
+    <h1 class="text-center">Formulario para registrar una actividad.</h1>
+  <form>
+
+    <div class="mb-2">
+      <label class="form-label">Nombre de la actividad</label>
+      <input type="text" class="form-control" name="nombre" [(ngModel)]="actividad.nombreActividad">
+    </div>
+
+    <div class="mb-2">
+      <label class="form-label">Estatus</label>
+      <br>
+      <select [(ngModel)] ="actividad.estatus" name="estatus">
+        <option value="0">Selecciona una opción</option>
+        <option value="Pendiente">Pendiente</option>
+        <option value="Realizada">Realizada</option>
+      </select>
+    </div>
+
+    <div class="mb-2">
+      <label class="form-label">Empleados</label>
+      <br>
+      <select [(ngModel)] ="actividad.nombreAsignado" name="empleados">
+        <option value="0">Selecciona una opción</option>
+        <option *ngFor="let emp of empleado" [ngValue]="emp.nombre"> {{ emp.nombre }} {{ emp.apellidos}}</option>
+      </select>
+    </div>
+
+
+    <div class="mb-2">
+      <label class="form-label">Hora de ejecucion</label>
+      <input type="time" class="form-control" name="hora" [(ngModel)]="actividad.horaEjecucion">
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary" (click)="create()" *ngIf="!actividad.id else elseBlock">Crear</button>
+
+    <ng-template #elseBlock>
+      <button type="submit" class="btn btn-primary" (click)="update()">Editar</button>
+    </ng-template>
+  </form>
+</div>

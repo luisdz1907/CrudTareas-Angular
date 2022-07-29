@@ -1,0 +1,58 @@
+<div class="container pt-3">
+  <h1 class="text-center">Tabla Actividades</h1>
+  <div class="mb-3 text-left">
+    <button
+      class="btn btn-actividad btn-rounded btn-primary"
+      type="button"
+      routerLink="/actividades/form-actv"
+    >
+      <span><i class="icon ion-md-add"></i></span> Crear una nueva Actividad
+    </button>
+  </div>
+
+  <!-- <div class="alert alert-info" *ngIf="clientes.length == 0">
+    No hay registro en la base de datos!
+  </div> -->
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Id</th>
+        <th>Estatus</th>
+        <th>Fecha de asigancion</th>
+        <th>Hora de asignacion</th>
+        <th>Nombre de la actividad</th>
+        <th>Empleado asignado</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let activiadItem of actividad">
+        <td>{{ activiadItem.id }}</td>
+        <td>{{ activiadItem.estatus }}</td>
+        <td>{{ activiadItem.fechaEjecucion }}</td>
+        <td>{{ activiadItem.horaEjecucion }}</td>
+        <td>{{ activiadItem.nombreActividad }}</td>
+        <td>{{ activiadItem.nombreAsignado }}</td>
+
+        <td>
+          <button
+            class="btn btn-primary btn-sm"
+            type="button"
+            [routerLink]="['/actividades/form-actv', activiadItem.id]"
+            name="editar"
+          >
+            <span><i class="icon ion-md-create"></i></span> Editar
+          </button>
+
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="delete(activiadItem)"
+            name="eliminar"
+          >
+            <span><i class="icon ion-md-trash"></i></span> Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

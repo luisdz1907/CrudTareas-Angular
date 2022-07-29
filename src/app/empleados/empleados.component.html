@@ -1,0 +1,59 @@
+<div class="container pt-3">
+  <h1 class="text-center">Tabla Empleado</h1>
+  <div class="mb-3 text-left">
+    <button
+      class="btn btn-empleado btn-rounded btn-primary"
+      type="button"
+      routerLink="/empleados/form"
+    >
+      <span><i class="icon ion-md-add"></i></span> Crear un nuevo Empleado
+    </button>
+  </div>
+
+  <!-- <div class="alert alert-info" *ngIf="clientes.length == 0">
+    No hay registro en la base de datos!
+  </div> -->
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Cedula</th>
+        <th>Fecha Nacimiento</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let empleadoItem of empleado">
+        <td>{{ empleadoItem.id }}</td>
+        <td>{{ empleadoItem.nombre }}</td>
+        <td>{{ empleadoItem.apellidos }}</td>
+        <td>{{ empleadoItem.cedula }}</td>
+        <td>{{ empleadoItem.fechaNaciemiento }}</td>
+        <td>{{ empleadoItem.direccion }}</td>
+        <td>{{ empleadoItem.telefono }}</td>
+        <td>
+          <button
+            class="btn btn-primary btn-sm"
+            type="button"
+            name="editar"
+            [routerLink]="['/empleados/form', empleadoItem.id]"
+          >
+            <span><i class="icon ion-md-create"></i></span> Editar
+          </button>
+
+          <button
+            class="btn btn-danger btn-sm"
+            name="eliminar"
+            (click)="delete(empleadoItem)"
+          >
+            <span><i class="icon ion-md-trash"></i></span> Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
